@@ -35,6 +35,7 @@ public class Main {
     public static void bfs() {
         Queue<Node> q = new LinkedList<>();
 
+        // 익어 있는 토마토들 넣어주기
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (tomatoInfoGraph[i][j] == 1) {
@@ -84,11 +85,11 @@ public class Main {
             tomatoInfoGraph[i] = Arrays.stream(tempTomatoInfos).mapToInt(Integer::parseInt).toArray();
         }
 
+        
         bfs();
 
         boolean falseFlag = false;
         int maxDay = -1;
-        // 정렬 후 그래프 확인
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (tomatoInfoGraph[i][j] == 0) {
