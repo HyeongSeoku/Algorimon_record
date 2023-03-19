@@ -4,6 +4,9 @@
     문제 링크 : https://www.acmicpc.net/problem/9375
 '''
 
+# 속도 개선
+import sys
+
 
 def cloth_combination(cloth_dict):
     # 점화식 : (카테고리1의 개수 + 1) * (카테고리2의 개수 + 1) - 1
@@ -17,14 +20,14 @@ def dict_exist(dict, key):
     dict[key] = dict[key] + 1 if key in dict else 1
 
 
-test_case_count = int(input())
+test_case_count = int(sys.stdin.readline())
 
 for _ in range(test_case_count):
-    cloth_count = int(input())
+    cloth_count = int(sys.stdin.readline())
     cloth_dict = {}
 
     for _ in range(cloth_count):
-        cloth_name, category = input().split()
+        cloth_name, category = sys.stdin.readline().split()
         dict_exist(cloth_dict, category)
 
     print(cloth_combination(cloth_dict))
