@@ -33,7 +33,6 @@ def bfs():
             ny, nx = ey + dy[k], ex + dx[k]
             # 좌표(박스) 크기를 넘어가면 안됨 and 해당 좌표 토마토가 익지 않은 상태(0)
             if 0 <= ny < n and 0 <= nx < m and box[ny][nx] == 0:
-                print("*****",nx, ny)
                 # 토마토를 익힌다 + 날짜 +1 -> 최대값 -1이 정답
                 box[ny][nx] = box[ey][ex] + 1
                 queue.append([ny, nx])
