@@ -1,45 +1,42 @@
 """
-1. 아이디어
+아이디어
 : 뭉탱이가 적은 쪽을 뒤집기 == 최소 횟수
-처음부터 돌면서 0,1의 뭉탱이를 찾는다.
-
-연속된 값을 다 더한다
-리스트의 길이 - 0의 뭉탱이, 0의 길이 비교
-
-2. 시간복잡도 O(n)
-
-3. 자료구조
-n = 전체 str의 길이의 수
-zero_zone = 0 뭉탱이의 수
-one_zone = 1 뭉탱이의 수
+1) 연속된 중복 리스트 제거한 새로운 리스트 생성
+2) 중복이 제거된 리스트 개수를 비교하여 적은 것이 값이 된다.
 """
 
 import sys
 
 s = sys.stdin.readline().rstrip()
-zero_zone = 0
-one_zone = 0
-#
-# for i in range(len(s)):
-#     if s[-i] != s[-(i + 1)]:
-#         if s[i] == "0":
-#             zero_zone += 1
-#         else:
-#             one_zone += 1
-#
-# result = min(zero_zone, one_zone)
-# print(result)
-
-# 방법1: 0, 1 zone 개수 비교
 str_list = [i for i in s]
-for i in str_list:
-    str_list.pop()
-    print(i, str_list[len(str_list)-1], str_list)
-    # 맨 마지막 값과 그 앞에 있는 값 비교
-    if str_list[len(str_list)-1] != i:
-        if i == '0':
-            zero_zone += 1
+
+
+# 중복을 제거한 리스트 생성
+def make_deduplication(input_list):
+    removed_list = []
+    prev = None
+    for i in input_list:
+        if prev != i:
+            removed_list.append(i)
+            prev = i
+    return removed_list
+
+
+# hash 형식으로 변경
+def make_hash() -> object:
+    dictionary = {}
+    removed_list = make_deduplication(str_list)
+    for key in removed_list:
+        if key in dictionary:
+            dictionary[key] += 1
         else:
-            one_zone += 1
-    # 리스트의 마지막일 경우
-    # print(str_list, zero_zone, one_zone)
+            dictionary[key] = 1
+    return dictionary
+
+
+result_dictionary = make_hash()
+if len(result_dictionary.keys()) == 1:
+    print(0)
+else:
+    # 어처피 key는 0과 1밖에 없으므로
+    print(min(result_dictionary['0'], result_dictionary['1']))
