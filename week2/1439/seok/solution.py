@@ -15,7 +15,7 @@ def read():
 command_line = int(read())
 alpha_dict = {}
 word_list = [read() for _ in range(command_line)]
-list_len = len(max(word_list, key=len))
+answer = 0
 
 for text in word_list:
     for index in range(len(text)):
@@ -23,7 +23,6 @@ for text in word_list:
         alpha_dict[text[index]] = alpha_dict[text[index]] + \
             num if text[index] in alpha_dict else num
 
-answer = 0
 sorted_list = sorted(alpha_dict.values(), reverse=True)
 
 for idx in range(len(sorted_list)):
