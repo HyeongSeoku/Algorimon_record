@@ -1,4 +1,4 @@
-## 📚 이번 주의 주제 - Greedy Algorithm
+## 📚 이번 주의 주제 - Implementation Algorithm
 
 ### 공통 문제
 
