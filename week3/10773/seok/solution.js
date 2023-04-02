@@ -18,13 +18,12 @@ const input = fs
   .split("\n")
   .map((item) => +item);
 
-const [K, ...list] = input;
 const answerList = [];
 
-for (let i = 0; i < K; ++i) {
-  if (list[i] === 0) {
+for (let i = 1; i <= input[0]; ++i) {
+  if (input[i] === 0) {
     answerList.pop();
-  } else answerList.push(list[i]);
+  } else answerList.push(input[i]);
 }
 
 let answer = 0;
