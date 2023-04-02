@@ -1,6 +1,8 @@
 """
 Memory usage: 127512 KB
+Time Took: 2820 ms
 """
+
 # Always override input
 import sys
 import copy
