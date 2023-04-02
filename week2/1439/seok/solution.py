@@ -20,4 +20,4 @@ for i in range(len(text) - 1):
     if text[i] != text[i + 1]:
         count += 1
 
-print(math.ceil(count/2))
+print(math.ceil(count / 2))
