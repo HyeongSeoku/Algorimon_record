@@ -21,9 +21,15 @@ const input = fs
 const [K, ...list] = input;
 const answerList = [];
 
-for (const num of list) {
-  if (num === 0) answerList.pop();
-  else answerList.push(num);
+for (let i = 0; i < K; ++i) {
+  if (list[i] === 0) {
+    answerList.pop();
+  } else answerList.push(list[i]);
 }
 
-console.log(answerList.reduce((acc, cur) => (acc += cur), 0));
+let answer = 0;
+for (let i = 0, len = answerList.length; i < len; ++i) {
+  answer += answerList[i];
+}
+
+console.log(answer);
