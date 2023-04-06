@@ -85,7 +85,7 @@ def up(board_copy):
 def down(board_copy):
     for y in range(n):
         cursor = n - 1
-        for x in range(x):
+        for x in range(n - 1, -1, -1):
             if board_copy[x][y] != 0:
                 temp = board_copy[x][y]
                 board_copy[x][y] = 0
@@ -94,6 +94,7 @@ def down(board_copy):
                     board_copy[cursor][y] = temp
                 elif board_copy[cursor][y] == temp:
                     board_copy[cursor][y] *= 2
+                    cursor -= 1
                 else:
                     cursor -= 1
                     board_copy[cursor][y] = temp
@@ -103,7 +104,7 @@ def down(board_copy):
 def dfs(num, board_list):
     global answer
 
-    if n == 5:
+    if num == 5:
         for y in range(n):
             for x in range(n):
                 if board_list[y][x] > answer:
