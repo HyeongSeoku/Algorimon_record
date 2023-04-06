@@ -1,4 +1,8 @@
 import java.util.*;
+/**
+Stack에 0이 아니면 넣어주고 0일 경우에 Stack에서 꺼내준다.
+ */
+
 
 public class Main {
 
