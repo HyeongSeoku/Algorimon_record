@@ -4,6 +4,9 @@
 
 - [10610 - 30 ](https://www.acmicpc.net/problem/10610) [실버4]
 - [8983 - 사냥꾼 ](https://www.acmicpc.net/problem/8983) [골드4]
+
+---
+### 심화 문제
 - [2109 - 순회강연 ](https://www.acmicpc.net/problem/2109) [골드3]
 
 ---
