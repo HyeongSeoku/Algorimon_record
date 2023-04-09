@@ -25,7 +25,9 @@ def findNearNum(exList, values):
     return min(exList, key=lambda x:abs(x-values))
 
 
+
 for i in range(len(graph)):
+    if(l<graph[i][1]) : continue
     shotPoint  = findNearNum(shotList,graph[i][0])
     if(l>= abs(graph[i][0]-shotPoint)+graph[i][1]):
         result +=1
