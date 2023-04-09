@@ -14,11 +14,13 @@
 import heapq
 import sys
 
+"""
 txt = str(sys.stdin.readline().rstrip())
 result = ""
 sum = 0
 numList = []
 zeroFlag = False
+
 
 for i in range( len(txt)):
     if(txt[i]=='0'): zeroFlag=True
@@ -26,17 +28,15 @@ for i in range( len(txt)):
     heapq.heappush(numList,txt[i])
 
 
-if(sum%3!=0 | (not zeroFlag)):
+if(sum%3!=0 or not zeroFlag):
     result = -1
 else :
     for i in range(len(numList)):
         result = heapq.heappop(numList)+result
 
 print(result)
-
-# 그래도 틀림.... why?
-
 """
+
 txt = str(sys.stdin.readline().rstrip())
 result = ""
 sum = 0
@@ -56,7 +56,7 @@ for i in range( len(txt)):
         
 
 
-if(sum%3!=0 | (not zeroFlag)):
+if(sum%3!=0 or (not zeroFlag)):
     result = -1
 else :
     for i in range(len(keyList)):
@@ -64,8 +64,6 @@ else :
         result = (key*obj[key]) +result
 
 print(result)
-
-"""
     
 
 
