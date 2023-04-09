@@ -20,26 +20,16 @@ for i in range(n):
 
 result = 0
 
+def findNearNum(exList, values):
 
-# print('m ',m)
-# print('n ',n)
-# print('l ',l)
+    return min(exList, key=lambda x:abs(x-values))
 
-# print('shotList ',shotList)
-# print('graph ',graph)
+
 for i in range(len(graph)):
-    # if(l<graph[i][1]):continue
+    shotPoint  = findNearNum(shotList,graph[i][0])
+    if(l>= abs(graph[i][0]-shotPoint)+graph[i][1]):
+        result +=1
 
-    for j in range(len(shotList)):
-        # print('i : ',i)
-        # print('j : ',j)
-        # print('abs(graph[i][0]-shotList[j])+graph[i][1] ',abs(graph[i][0]-shotList[j])+graph[i][1])
-        if(l>= abs(graph[i][0]-shotList[j])+graph[i][1] ):
-            # print('증가@@@@@@@@@@@')
-            result +=1
-            break
-
-# print('result : ',result)
 print(result)
 
 
