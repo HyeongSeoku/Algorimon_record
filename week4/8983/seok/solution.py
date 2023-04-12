@@ -5,26 +5,33 @@
     문제 링크 : https://www.acmicpc.net/problem/8983
 '''
 
-'''
-|x - a| + b
-'''
-
 import sys
 read = sys.stdin.readline
 
 M, N, L = map(int, read().rstrip().split(" "))
 
 shooting_zone_list = list(map(int, read().rstrip().split(" ")))
-animal_point_list = [tuple(map(int, read().rstrip().split(" ")))
+animal_point_list = [list(map(int, read().rstrip().split(" ")))
                      for _ in range(N)]
-animal_point_list.sort(key=lambda x: x[0])
+shooting_zone_list.sort()
 
 result = 0
 
-for i in shooting_zone_list:
-    for j in animal_point_list[::]:
-        if abs(i - j[0]) + j[1] <= L:
+for x, y in animal_point_list:
+    if y > L:
+        continue
+    min = x + y - L
+    max = x - y + L
+    start, end = 0, M - 1
+
+    while start <= end:
+        mid = (start + end) // 2
+        if shooting_zone_list[mid] < min:
+            start = mid + 1
+        elif shooting_zone_list[mid] > max:
+            end = mid - 1
+        else:
             result += 1
-            animal_point_list.remove(j)
+            break
 
 print(result)
