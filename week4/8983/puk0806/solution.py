@@ -16,7 +16,7 @@ read = sys.stdin.readline
 
 
 # 3번째 풀이 9점 ...
-
+"""
 m, n, l= map(int, read().split())
 shotList = list(map(int,read().split()))
 # maxY=0
@@ -72,6 +72,9 @@ for i in range(len(shotList)):
                 #print("x : ",x,"  y :",y ," abs(x-shotList[i])+y : ",abs(x-shotList[i])+y)
                 #graph[y][x]=False
                 result+=1
+print(result)                
+
+"""
                 
 
 
@@ -118,25 +121,37 @@ for i in range(len(shotList)):
                 #print("x : ",x,"  y :",y ," abs(x-shotList[i])+y : ",abs(x-shotList[i])+y)
                 graph[y][x]=False
                 result+=1
+
+print(result)                
+
 """
 
 
 # 첫풀이 ... 60
 """
-# def findNearNum(exList, values):
+m, n, l= map(int, read().split())
+shotList = list(map(int,read().split()))
 
-#     return min(exList, key=lambda x:abs(x-values))
+graph = []
+for i in range(n):
+    graph.append(list(map(int, read().split())))
+
+result = 0
+
+def findNearNum(exList, values):
+
+    return min(exList, key=lambda x:abs(x-values))
 
 
-
-# for i in range(len(graph)):
-#     if(l<graph[i][1]) : continue
-#     shotPoint  = findNearNum(shotList,graph[i][0])
-#     if(l>= abs(graph[i][0]-shotPoint)+graph[i][1]):
-#         result +=1
-"""
+for i in range(len(graph)):
+    shotPoint  = findNearNum(shotList,graph[i][0])
+    if(l>= abs(graph[i][0]-shotPoint)+graph[i][1]):
+        result +=1
 
 print(result)
+"""
+
+
 
 
 
