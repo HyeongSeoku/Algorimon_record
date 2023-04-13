@@ -33,4 +33,4 @@ print(amount)
 
 ## Description
 
-headq를 이용하여 풀이할 수 있습니다.
+heapq 이용하여 풀이할 수 있습니다.
