@@ -8,7 +8,7 @@ def input():
 
 m, n, l = map(int, input().split())
 hunters = sorted(map(int, input().split()))
-animals = [tuple(map(int, input().split())) for _ in range(n)]
+animals = [map(int, input().split()) for _ in range(n)]
 
 killed = 0
 
