@@ -24,6 +24,7 @@ public class Main {
         int[] shotList = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         Arrays.sort(shotList);
 
+        // 동물정보 입력받으면서 확인 
         String[] animalInfo;
         for (int i = 0; i < n; i++) {
             animalInfo = br.readLine().split(" ");
@@ -39,6 +40,8 @@ public class Main {
 
     }
 
+
+    // 가장 근사한 사로 찾기
     public static int searchApproxIdxAbs(int[] numList, int target) {
 
         int start = 0;
