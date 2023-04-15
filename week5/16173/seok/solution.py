@@ -33,7 +33,7 @@ while queue:
         ny = y + dy[i] * jump
         nx = x + dx[i] * jump
         # 해당 부분 런타임 에러 ny < N and nx < N 이어야 함..
-        if 0 <= ny <= N and 0 <= nx <= N and visit[ny][nx] == 0:
+        if 0 <= ny < N and 0 <= nx < N and visit[ny][nx] == 0:
             visit[ny][nx] = 1
             queue.append([ny, nx])
 
