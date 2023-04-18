@@ -7,8 +7,8 @@ def input():
 
 
 n, m = map(int, input().split())
-matrix = [[list(map(int, input().split())) + [0, 0]
-           for _ in range(m)] for _ in range(n)]
+matrix = [list(map(lambda x: [int(x), 0, 0], input()))
+          for _ in range(n)]
 directions = (
     (0, -1),  # top
     (1, 0),   # right
