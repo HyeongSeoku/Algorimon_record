@@ -24,7 +24,7 @@ n = int(read())
 liquid_list = sorted(list(map(int, read().split())))
 
 answer_list = []
-min_value = 999999999
+min_value = 9999999999999999
 
 for i in range(n-2):
     fixed_point = liquid_list[i]
@@ -35,11 +35,12 @@ for i in range(n-2):
         if abs(sum_value) <= abs(min_value):
             min_value = abs(sum_value)
             answer_list = [fixed_point, liquid_list[min_point], liquid_list[max_point]]
+        if sum_value < 0:
             min_point += 1
-        elif abs(sum_value) > abs(min_value):
+        elif sum_value > 0:
             max_point -= 1
-        elif abs(sum_value) == 0:
-            answer_list = [fixed_point, liquid_list[min_point], liquid_list[max_point]]
+        elif sum_value == 0:
+            print(*answer_list)
             sys.exit()
 
 print(*answer_list)
