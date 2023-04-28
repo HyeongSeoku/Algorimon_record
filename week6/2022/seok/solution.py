@@ -23,7 +23,7 @@ def binary_c(mid):
 
 result = 0
 
-while end - start > 0.000001:
+while end - start > 0.001:
     mid = (start + end) / 2
     if binary_c(mid) >= c:
         result = mid
@@ -31,4 +31,4 @@ while end - start > 0.000001:
     else:
         end = mid
 
-print(round(result, 3))
+print(round(result, 4))
